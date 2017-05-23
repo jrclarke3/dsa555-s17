@@ -15,6 +15,9 @@ class DList{
 	Node* front_;
 	Node* back_;
 public:
+	class iterator{
+
+	};
 	DList(){
 		front_=back_=nullptr;
 	}
@@ -29,15 +32,29 @@ public:
 		}
 		else{
 			//make a node
+			Node* nn=new Node(data,front_);
 			//change previous pointer of old front node
+			front_->prev_=nn;
 			//change front pointer
+			front_=nn;
 		}	
 	}
 	void push_back(const T& data){		
 
 	}
 	void pop_front(){
-		
+		if(the list is not empty){
+			Node* rm = front_;
+			front_=front_->next_;
+			delete rm;
+			if(front_!=nullptr){
+				front_->prev_=nullptr;
+			}
+			else{
+				//this else only happens if list had only one node
+				back_=nullptr;
+			}
+		}
 	}
 	void pop_back();
 	void print() const;
