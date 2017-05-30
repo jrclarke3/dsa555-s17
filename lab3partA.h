@@ -171,7 +171,7 @@ public:
 			}
 			else{
 				//this else only happens if list had only one node
-				back_=nullptr;
+				front_=back_=nullptr;
 			}
 		}
 	}
