@@ -165,7 +165,8 @@ public:
 			Node* rm = front_;
 			front_=front_->next_;
 			delete rm;
-			if(front_!=nullptr){
+			//more than one node
+			if(front_!=back_){
 				front_->prev_=nullptr;
 			}
 			else{
