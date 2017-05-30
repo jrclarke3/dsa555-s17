@@ -165,13 +165,12 @@ public:
 			Node* rm = front_;
 			front_=front_->next_;
 			delete rm;
-			//more than one node
-			if(front_!=back_){
+			if(front_!=nullptr){
 				front_->prev_=nullptr;
 			}
 			else{
 				//this else only happens if list had only one node
-				front_=back_=nullptr;
+				back_=nullptr;
 			}
 		}
 	}
